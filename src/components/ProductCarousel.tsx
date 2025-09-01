@@ -111,11 +111,6 @@ const ProductCarousel = () => {
                                 alt={product.title}
                                 className="w-full h-full object-cover"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                                <h3 className="text-lg font-bold mb-1 line-clamp-1">{product.title}</h3>
-                                <p className="text-sm opacity-90 line-clamp-2">{product.description}</p>
-                              </div>
                             </div>
                           </DialogTrigger>
                           <DialogContent className="max-w-4xl max-h-[90vh] p-0">
