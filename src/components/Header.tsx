@@ -30,7 +30,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <img 
-              src="/lovable-uploads/d0c99ca9-e7dd-4276-82ca-f8c0b1c52c8b.png" 
+              src="/lovable-uploads/732821c8-5850-42fe-9bcc-7d2c02e63b47.png" 
               alt="SMF Móveis e Colchões - Logo"
               className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
             />
