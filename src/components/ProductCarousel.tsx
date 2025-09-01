@@ -1,15 +1,19 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselApi,
 } from '@/components/ui/carousel';
 
 const ProductCarousel = () => {
+  const [api, setApi] = useState<CarouselApi>();
+
   const products = [
     {
       id: 1,
@@ -61,6 +65,17 @@ const ProductCarousel = () => {
     }
   ];
 
+  // Auto-play functionality
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
@@ -75,6 +90,7 @@ const ProductCarousel = () => {
 
         <div className="max-w-6xl mx-auto">
           <Carousel
+            setApi={setApi}
             opts={{
               align: "start",
               loop: true,
@@ -87,18 +103,35 @@ const ProductCarousel = () => {
                   <div className="p-2">
                     <Card className="h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                       <CardContent className="p-0">
-                        <div className="aspect-[4/3] relative">
-                          <img
-                            src={product.image}
-                            alt={product.title}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                          <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                            <h3 className="text-lg font-bold mb-1 line-clamp-1">{product.title}</h3>
-                            <p className="text-sm opacity-90 line-clamp-2">{product.description}</p>
-                          </div>
-                        </div>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <div className="aspect-[4/3] relative cursor-pointer">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                              <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 className="text-lg font-bold mb-1 line-clamp-1">{product.title}</h3>
+                                <p className="text-sm opacity-90 line-clamp-2">{product.description}</p>
+                              </div>
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-4xl max-h-[90vh] p-0">
+                            <div className="relative">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="w-full h-auto max-h-[80vh] object-contain"
+                              />
+                              <div className="p-6">
+                                <h3 className="text-2xl font-bold mb-2">{product.title}</h3>
+                                <p className="text-gray-600">{product.description}</p>
+                              </div>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </CardContent>
                     </Card>
                   </div>
