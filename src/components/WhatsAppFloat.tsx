@@ -25,18 +25,16 @@ const WhatsAppFloat = () => {
         href="https://wa.me/5511913558281"
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 sm:gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white px-3 py-2.5 sm:px-4 sm:py-3 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+        className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-whatsapp hover:bg-whatsapp-hover text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110"
         aria-label="Falar no WhatsApp"
       >
-        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-          <span className="text-lg sm:text-2xl">💬</span>
-        </div>
+        <span className="text-2xl sm:text-3xl">💬</span>
         
-        {/* Message bubble - hidden on mobile and small tablets */}
-        <div className="hidden lg:block max-w-0 group-hover:max-w-xs overflow-hidden transition-all duration-300">
-          <div className="whitespace-nowrap">
-            <p className="font-semibold text-sm">Fale conosco!</p>
-            <p className="text-xs opacity-90">Clique para conversar</p>
+        {/* Message bubble - appears on hover */}
+        <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+          <div className="bg-gray-800 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
+            Fale conosco!
+            <div className="absolute top-1/2 -right-1 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-800 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
           </div>
         </div>
       </a>
