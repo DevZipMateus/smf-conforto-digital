@@ -24,9 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary shadow-lg`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
@@ -36,39 +34,31 @@ const Header = () => {
               alt="SMF Móveis e Colchões - Logo"
               className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
             />
-            <div>
-              <h1 className="text-base sm:text-lg lg:text-xl font-heading font-bold text-primary leading-tight">
-                SMF MÓVEIS
-              </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground -mt-0.5 sm:-mt-1 leading-none">
-                & COLCHÕES
-              </p>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             <button 
               onClick={() => scrollToSection('inicio')}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
+              className="text-primary-foreground hover:text-white/80 transition-colors font-medium text-sm xl:text-base"
             >
               Início
             </button>
             <button 
               onClick={() => scrollToSection('sobre')}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
+              className="text-primary-foreground hover:text-white/80 transition-colors font-medium text-sm xl:text-base"
             >
               Sobre
             </button>
             <button 
               onClick={() => scrollToSection('servicos')}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
+              className="text-primary-foreground hover:text-white/80 transition-colors font-medium text-sm xl:text-base"
             >
               Serviços
             </button>
             <button 
               onClick={() => scrollToSection('contato')}
-              className="text-foreground hover:text-primary transition-colors font-medium text-sm xl:text-base"
+              className="text-primary-foreground hover:text-white/80 transition-colors font-medium text-sm xl:text-base"
             >
               Contato
             </button>
@@ -76,7 +66,7 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-            <div className="flex items-center space-x-2 text-xs xl:text-sm text-muted-foreground">
+            <div className="flex items-center space-x-2 text-xs xl:text-sm text-primary-foreground/80">
               <Phone className="h-3 w-3 xl:h-4 xl:w-4" />
               <span>(11) 91355-8281</span>
             </div>
@@ -95,47 +85,47 @@ const Header = () => {
             aria-label="Menu"
           >
             {isMenuOpen ? (
-              <X className="h-5 w-5 sm:h-6 sm:w-6 text-foreground" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
             ) : (
-              <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-foreground" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 glass-effect border-t border-border">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-primary/95 backdrop-blur-sm border-t border-primary-foreground/20">
             <nav className="flex flex-col space-y-2 sm:space-y-4 p-4">
               <button 
                 onClick={() => scrollToSection('inicio')}
-                className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm sm:text-base"
+                className="text-left text-primary-foreground hover:text-white/80 transition-colors font-medium py-2 text-sm sm:text-base"
               >
                 Início
               </button>
               <button 
                 onClick={() => scrollToSection('sobre')}
-                className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm sm:text-base"
+                className="text-left text-primary-foreground hover:text-white/80 transition-colors font-medium py-2 text-sm sm:text-base"
               >
                 Sobre
               </button>
               <button 
                 onClick={() => scrollToSection('servicos')}
-                className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm sm:text-base"
+                className="text-left text-primary-foreground hover:text-white/80 transition-colors font-medium py-2 text-sm sm:text-base"
               >
                 Serviços
               </button>
               <button 
                 onClick={() => scrollToSection('contato')}
-                className="text-left text-foreground hover:text-primary transition-colors font-medium py-2 text-sm sm:text-base"
+                className="text-left text-primary-foreground hover:text-white/80 transition-colors font-medium py-2 text-sm sm:text-base"
               >
                 Contato
               </button>
-              <div className="flex flex-col space-y-2 pt-3 sm:pt-4 border-t border-border">
-                <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
+              <div className="flex flex-col space-y-2 pt-3 sm:pt-4 border-t border-primary-foreground/20">
+                <div className="flex items-center space-x-2 text-xs sm:text-sm text-primary-foreground/80">
                   <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span>(11) 91355-8281</span>
                 </div>
-                <div className="flex items-center space-x-2 text-xs sm:text-sm text-muted-foreground">
+                <div className="flex items-center space-x-2 text-xs sm:text-sm text-primary-foreground/80">
                   <Mail className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span className="break-all">smfmoveis675@gmail.com</span>
                 </div>
