@@ -87,15 +87,26 @@ const About = () => {
             </div>
           </div>
 
-          {/* Image placeholder */}
+          {/* Video */}
           <div className="relative order-1 lg:order-2">
-            <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 rounded-2xl flex items-center justify-center">
-              <div className="text-muted-foreground text-center p-4">
-                <Users className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-3 sm:mb-4 opacity-50" />
-                <p className="text-base sm:text-lg font-medium">Imagem da empresa</p>
-                <p className="text-sm opacity-70">Showroom SMF Móveis</p>
+            <video
+              className="w-full aspect-[4/3] rounded-2xl object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              disablePictureInPicture
+              style={{ pointerEvents: 'none' }}
+            >
+              <source src="/lovable-uploads/smf.mp4" type="video/mp4" />
+              <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 rounded-2xl flex items-center justify-center">
+                <div className="text-muted-foreground text-center p-4">
+                  <Users className="h-12 w-12 sm:h-16 sm:w-16 mx-auto mb-3 sm:mb-4 opacity-50" />
+                  <p className="text-base sm:text-lg font-medium">Vídeo não suportado</p>
+                  <p className="text-sm opacity-70">Showroom SMF Móveis</p>
+                </div>
               </div>
-            </div>
+            </video>
           </div>
         </div>
 
