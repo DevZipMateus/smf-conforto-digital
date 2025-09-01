@@ -12,17 +12,22 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-20">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 hero-gradient"></div>
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/b1cd5e32-aaaa-4d88-83fd-f5a3cb07d63c.png')`
+        }}
+      ></div>
       
-      {/* Background pattern */}
-      <div className="absolute inset-0 section-pattern opacity-10"></div>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-8 sm:py-12 lg:py-20">
-        <div className="max-w-4xl mx-auto text-center text-hero-foreground">
+        <div className="max-w-4xl mx-auto text-center text-white">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 animate-fade-in">
             <Star className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 flex-shrink-0" />
             <span className="text-xs sm:text-sm font-medium">Mais de 10 anos de experiência</span>
           </div>
@@ -37,7 +42,7 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-hero-foreground/80 mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up px-4 sm:px-0 leading-relaxed" style={{animationDelay: '0.2s'}}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up px-4 sm:px-0 leading-relaxed" style={{animationDelay: '0.2s'}}>
             Transforme sua casa com nossa seleção premium de móveis e colchões. 
             Atendemos São Paulo, Grande São Paulo e região com excelência.
           </p>
@@ -46,15 +51,15 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-10 animate-slide-up px-4 sm:px-0" style={{animationDelay: '0.4s'}}>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
-              <span className="text-sm sm:text-base text-hero-foreground/90">Móveis de qualidade</span>
+              <span className="text-sm sm:text-base text-white/90">Móveis de qualidade</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
-              <span className="text-sm sm:text-base text-hero-foreground/90">Colchões premium</span>
+              <span className="text-sm sm:text-base text-white/90">Colchões premium</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 flex-shrink-0" />
-              <span className="text-sm sm:text-base text-hero-foreground/90">Atendimento personalizado</span>
+              <span className="text-sm sm:text-base text-white/90">Atendimento personalizado</span>
             </div>
           </div>
 
@@ -73,7 +78,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('sobre')}
-              className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-hero-foreground hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              className="border-2 border-white/40 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             >
               Conheça nossa história
             </Button>
@@ -85,7 +90,7 @@ const Hero = () => {
               href="https://wa.me/5511913558281"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-hero-foreground/80 hover:text-hero-foreground transition-colors text-sm sm:text-base"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm sm:text-base"
             >
               <div className="w-5 h-5 sm:w-6 sm:h-6 bg-whatsapp rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-bold">W</span>
