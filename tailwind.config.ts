@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,6 +69,11 @@ export default {
 				whatsapp: {
 					DEFAULT: 'hsl(var(--whatsapp))',
 					hover: 'hsl(var(--whatsapp-hover))'
+				},
+				// New header red color
+				header: {
+					DEFAULT: '#da0002',
+					foreground: '#ffffff'
 				}
 			},
 			borderRadius: {
