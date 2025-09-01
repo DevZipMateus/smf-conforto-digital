@@ -10,18 +10,26 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="mb-4 sm:mb-6">
-              <h3 className="text-xl sm:text-2xl font-heading font-bold text-hero-foreground mb-2">
-                SMF MÓVEIS & COLCHÕES
-              </h3>
-              <p className="text-sm sm:text-base text-hero-foreground/80 mb-3 sm:mb-4">
-                Conforto, estilo e qualidade para seu lar
-              </p>
-              <p className="text-sm sm:text-base text-hero-foreground/70 leading-relaxed">
-                Há mais de 10 anos transformando lares com móveis e colchões de qualidade superior. 
-                Atendemos São Paulo, Grande São Paulo e região com excelência e dedicação.
-              </p>
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <img 
+                src="/lovable-uploads/732821c8-5850-42fe-9bcc-7d2c02e63b47.png" 
+                alt="SMF Móveis e Colchões - Logo"
+                className="h-12 w-12 sm:h-14 sm:w-14 object-contain flex-shrink-0"
+              />
+              <div>
+                <h3 className="text-xl sm:text-2xl font-heading font-bold text-hero-foreground mb-1">
+                  SMF MÓVEIS & COLCHÕES
+                </h3>
+                <p className="text-sm sm:text-base text-hero-foreground/80">
+                  Conforto, estilo e qualidade para seu lar
+                </p>
+              </div>
             </div>
+            
+            <p className="text-sm sm:text-base text-hero-foreground/70 leading-relaxed mb-4">
+              Há mais de 10 anos transformando lares com móveis e colchões de qualidade superior. 
+              Atendemos São Paulo, Grande São Paulo e região com excelência e dedicação.
+            </p>
             
             <div className="text-xs sm:text-sm text-hero-foreground/60">
               <p>CNPJ: 49.629.552/0001-52</p>

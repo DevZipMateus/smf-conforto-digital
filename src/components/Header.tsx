@@ -30,11 +30,20 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-lg sm:text-xl lg:text-2xl font-heading font-bold text-primary">
-              SMF MÓVEIS
-            </h1>
-            <p className="text-xs text-muted-foreground -mt-0.5 sm:-mt-1">& COLCHÕES</p>
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+            <img 
+              src="/lovable-uploads/732821c8-5850-42fe-9bcc-7d2c02e63b47.png" 
+              alt="SMF Móveis e Colchões - Logo"
+              className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 object-contain"
+            />
+            <div>
+              <h1 className="text-base sm:text-lg lg:text-xl font-heading font-bold text-primary leading-tight">
+                SMF MÓVEIS
+              </h1>
+              <p className="text-xs sm:text-sm text-muted-foreground -mt-0.5 sm:-mt-1 leading-none">
+                & COLCHÕES
+              </p>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
