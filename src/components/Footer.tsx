@@ -107,7 +107,11 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-whatsapp hover:bg-whatsapp-hover text-white font-medium rounded-lg transition-colors text-sm sm:text-base"
             >
-              <span>💬</span>
+              <img 
+                src="/lovable-uploads/24daba64-8faf-41f5-8697-ecf772465197.png" 
+                alt="WhatsApp"
+                className="w-4 h-4 sm:w-5 sm:h-5 object-contain"
+              />
               Iniciar conversa
             </a>
           </div>

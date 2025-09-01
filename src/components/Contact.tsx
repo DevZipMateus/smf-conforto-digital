@@ -128,8 +128,12 @@ const Contact = () => {
             {/* WhatsApp CTA */}
             <div className="bg-whatsapp/10 border border-whatsapp/20 rounded-2xl p-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white font-bold">W</span>
+                <div className="w-12 h-12 bg-whatsapp rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/24daba64-8faf-41f5-8697-ecf772465197.png" 
+                    alt="WhatsApp"
+                    className="w-8 h-8 object-contain"
+                  />
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold text-section-foreground mb-1">

@@ -92,8 +92,12 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm sm:text-base"
             >
-              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-whatsapp rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-xs font-bold">W</span>
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-whatsapp rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img 
+                  src="/lovable-uploads/24daba64-8faf-41f5-8697-ecf772465197.png" 
+                  alt="WhatsApp"
+                  className="w-3 h-3 sm:w-4 sm:h-4 object-contain"
+                />
               </div>
               <span>Ou converse conosco pelo WhatsApp</span>
             </a>

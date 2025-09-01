@@ -25,10 +25,14 @@ const WhatsAppFloat = () => {
         href="https://wa.me/5511913558281"
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-whatsapp hover:bg-whatsapp-hover text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110"
+        className="group flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-whatsapp hover:bg-whatsapp-hover text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 overflow-hidden"
         aria-label="Falar no WhatsApp"
       >
-        <span className="text-2xl sm:text-3xl">💬</span>
+        <img 
+          src="/lovable-uploads/24daba64-8faf-41f5-8697-ecf772465197.png" 
+          alt="WhatsApp"
+          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+        />
         
         {/* Message bubble - appears on hover */}
         <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
