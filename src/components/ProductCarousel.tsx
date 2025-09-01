@@ -1,7 +1,13 @@
 
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const ProductCarousel = () => {
   const products = [
@@ -55,31 +61,6 @@ const ProductCarousel = () => {
     }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-advance carousel every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        prevIndex === products.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [products.length]);
-
-  const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? products.length - 1 : currentIndex - 1);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex(currentIndex === products.length - 1 ? 0 : currentIndex + 1);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
@@ -92,73 +73,41 @@ const ProductCarousel = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Main carousel container */}
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
+        <div className="max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
               {products.map((product) => (
-                <div key={product.id} className="min-w-full">
-                  <div className="aspect-[16/10] relative">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-2xl font-bold mb-2">{product.title}</h3>
-                      <p className="text-lg opacity-90">{product.description}</p>
-                    </div>
+                <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <Card className="h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                      <CardContent className="p-0">
+                        <div className="aspect-[4/3] relative">
+                          <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                          <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 className="text-lg font-bold mb-1 line-clamp-1">{product.title}</h3>
+                            <p className="text-sm opacity-90 line-clamp-2">{product.description}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </div>
+                </CarouselItem>
               ))}
-            </div>
-
-            {/* Navigation buttons */}
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-white/20 hover:bg-white/90"
-              onClick={goToPrevious}
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border-white/20 hover:bg-white/90"
-              onClick={goToNext}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-
-          {/* Dots indicator */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {products.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-red-600 scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
-          </div>
-
-          {/* Auto-play indicator */}
-          <div className="flex justify-center mt-4">
-            <div className="text-sm text-gray-500 flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              Alternando automaticamente a cada 3 segundos
-            </div>
-          </div>
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </div>
     </section>
