@@ -236,37 +236,6 @@ const Contact = () => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Map */}
-        <div className="mt-16">
-          <Card className="overflow-hidden shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-xl font-heading">Nossa Localização</CardTitle>
-              <p className="text-muted-foreground">
-                Venha nos visitar em nosso showroom
-              </p>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="aspect-[16/9] bg-muted flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-medium">Mapa Interativo</p>
-                  <p className="text-sm">Avenida Deputado Cantidio Sampaio, 807</p>
-                  <p className="text-sm">São Paulo, SP</p>
-                  <a
-                    href="https://maps.google.com/?q=Avenida+Deputado+Cantidio+Sampaio+807+São+Paulo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    <MapPin className="h-4 w-4" />
-                    Abrir no Google Maps
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
